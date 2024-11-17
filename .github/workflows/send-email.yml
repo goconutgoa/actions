@@ -9,6 +9,11 @@ jobs:
   send_email:
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0  # Ensure full history is fetched
+
       - name: Extract Commit Information
         id: commit_info
         run: |
